@@ -1,0 +1,14 @@
+@import './reset.scss';
+@import './variables';
+@import './typography';
+@import './layout';
+@import './forms';
+
+body {
+  font-size: $base-font-size;
+  color: #444;
+  font-family: $font-small;
+}
+body * {
+  box-sizing: border-box;
+}
