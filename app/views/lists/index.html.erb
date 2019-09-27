@@ -1,47 +1,14 @@
 <div class="projects flex">
-  <aside class="projects--flatlist">
 
-    <nav class="menu">
-      <div class="menu--sitename">Simplist</div>
-      <div class="menu--control">&#9776;</div>
-    </nav>
+  <%= render 'sidebar' %>
 
-    <header class="projects--title">
-      <h5 class="label">Lists</h5>
-    </header>
-
-    <ul class="list areas">
-      <li class="areas__item areas__item selected">
-        <span class="circle green"></span>Inbox</li>
-      <li class="areas__item">
-        <span class="circle orange"></span>House</li>
-      <li class="areas__item">
-        <span class="circle yellow"></span>Portfolio Site</li>
-      <li class="areas__item">
-        <span class="circle purple"></span>Recipes</li>
-    </ul>
-
-    <hr/>
-
-    <ul class="list actions">
-      <li class="actions__item">
-        <span class="icon"><%= fa_icon "plus-square" %></span>New List
-      </li>
-      <li class="actions__item">
-        <span class="icon"><%= fa_icon "gear" %></span>Settings
-      </li>
-      <li class="actions__item">
-        <span class="icon"><%= fa_icon "info-circle" %></span>Help
-      </li>
-  </aside>
-
-  <div class="projects--content">
+  <div class="projects__content">
 
     <div class="infobar">
-      <div class="infobar--listtitle">
+      <div class="infobar__listtitle">
         Inbox
       </div>
-      <div class="infobar--itemcount">
+      <div class="infobar__itemcount">
         4 Items
       </div>
     </div>

@@ -4,6 +4,7 @@ class ListsController < ApplicationController
 
   def index
     @list = List.all
+    @newlist = List.new
   end
 
   def show
@@ -11,6 +12,7 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
+    @currentlists = List.all
   end
 
   def edit
@@ -18,11 +20,12 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
+    @currentlists = List.all
 
     respond_to do |format|
       if @list.save
-        format.html { redirect_to @list, notice: 'List created!'}
-        format.json { render :show, status: :created, location: @list }
+        format.html { redirect_to action: 'index', notice: 'List created!'}
+        format.json { render :root, status: :created, location: @list }
       else
         format.html { render :new }
         format.json { render json: @list.errors, status: :unprocessable_entity }
