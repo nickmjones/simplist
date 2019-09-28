@@ -1,18 +1,17 @@
 class ListsController < ApplicationController
-
   before_action :set_list, only: [:show, :edit, :update, :destroy]
 
   def index
-    @list = List.all
-    @newlist = List.new
+    @lists = List.all
   end
 
   def show
+    @task = Task.new
   end
 
   def new
     @list = List.new
-    @currentlists = List.all
+    @lists = List.all
   end
 
   def edit
@@ -20,7 +19,6 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-    @currentlists = List.all
 
     respond_to do |format|
       if @list.save
@@ -59,9 +57,11 @@ class ListsController < ApplicationController
 
   def set_list
     @list = List.find(params[:id])
+    @lists = List.all
   end
 
   def list_params
-    params.require(:list).permit(:title, :color)
+    params.require(:list).permit(:id, :title, :color) 
   end
+  
 end

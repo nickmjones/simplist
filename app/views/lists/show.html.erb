@@ -1,0 +1,32 @@
+<% content_for :workspace do %>
+  <div class="infobar">
+    <div class="infobar__listtitle">
+      <h3><%= @list.title %></h3>
+    </div>
+    <div class="infobar__itemcount">
+      <%= pluralize(@list.tasks.count, "item") %>
+    </div>
+  </div>
+
+  <ul class="todos">
+    <% if @list.tasks.any? %>
+      <% @list.tasks.each do |task| %>
+        <li class="todos__item">
+          <div class="todos__status">
+            <%= fa_icon "check" %>
+          </div>
+          <div class="todos__title">
+            <%= task.title %>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+    <li class="todos__item">
+      <div class="todos__status">
+        <%= fa_icon "plus" %>
+      </div>
+      <div class="todos__title">
+      </div>
+    </li>
+  </ul>
+<% end %>

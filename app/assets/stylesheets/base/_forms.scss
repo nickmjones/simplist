@@ -1,6 +1,11 @@
-.modal {
-  border: solid #d7d7d7;
-  border-width: 1px 1px 3px 1px;
-  padding: $space-l;
-  align-self: center;
+.btn {
+  background: #247ba0;
+  border: 0;
+  color: #fff;
+  border-radius: 5px;
+  display: inline-block;
+}
+.btn--small {
+  font-size: .8rem;
+  padding: 6px 12px;
 }

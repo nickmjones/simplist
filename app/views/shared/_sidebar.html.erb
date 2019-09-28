@@ -1,0 +1,39 @@
+<!-- sidebar top nav and menu control -->
+<nav class="menu">
+  <div class="menu__sitename">Simplist</div>
+  <div class="menu__control">&#9776;</div>
+</nav>
+
+<!-- label -->
+<header class="projects__title">
+  <h5 class="label">Lists</h5>
+</header>
+
+<!-- Projects/Lists -->
+<ul class="list areas">
+  <% @lists.each do |list| %>
+    <%= active_link_to list_path(list.id) do %>
+      <li class="areas__item">
+        <span class="circle" style="background-color: #<%=list.color %>;">
+        </span><%= list.title %>
+      </li>
+    <% end %>
+  <% end %> 
+</ul>
+
+<hr/>
+
+<!-- list actions -->
+<ul class="list actions">
+  <li class="actions__item">
+    <%=link_to new_list_path do %>
+      <span class="icon"><%= fa_icon "plus-square" %></span>New List
+    <% end %>
+  </li>
+  <li class="actions__item">
+    <span class="icon"><%= fa_icon "gear" %></span>Settings
+  </li>
+  <li class="actions__item">
+    <span class="icon"><%= fa_icon "info-circle" %></span>Help
+  </li>
+</ul>

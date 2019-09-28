@@ -4,18 +4,34 @@
     <title>Simplist</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
-    <div class="message">
-      <%= notice %>
+    <p id="notice"><%= notice %></p>
+
+    <div class="overlay">
+      <div class="overlay__close-modal">
+        <%= fa_icon "times-circle" %>
+      </div>
     </div>
-    <div class="wrapper">
-      <%= yield %>
+
+    <div class="projects flex">
+      <aside class="projects__sidebar">
+        <%= render 'shared/sidebar' %>
+      </aside>
+      <div class="projects__content">
+        <%= yield :workspace %>
+      </div>
     </div>
+
+    <div class="modal modal--newtask">
+      <input type="text" placeholder="Task Name" autofocus>
+      <textarea placeholder="Description" rows="10"></textarea>
+      <button class="btn btn--small btn--right">Create Task</button>
+    </div>
+
   </body>
 </html>
